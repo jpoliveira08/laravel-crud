@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit</title>
 </head>
+
 <body>
     @if ($errors->any())
       <div>
