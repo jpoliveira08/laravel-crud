@@ -15,22 +15,12 @@ class UsersController extends Controller
         ]);
     }
 
-    /**
-     * Undocumented function
-     *
-     * @return void
-     */
+
     public function create()
     {
         return view('users.create');
     }
 
-    /**
-     * Undocumented function
-     *
-     * @param Request $request
-     * @return void
-     */
     public function store(Request $request)
     {
         User::create([
@@ -39,6 +29,28 @@ class UsersController extends Controller
             'email' => $request->email
         ]);
 
-        return "User sucessfully registered";
+        return "User successfully registered";
+    }
+
+    public function edit(int $id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('users.edit', [
+            'user' => $user
+        ]);
+    }
+
+    public function update(Request $request, int $id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->update([
+            'name' => $request->name,
+            'contact' => $request->contact,
+            'email' => $request->email
+        ]);
+
+        return "User successfully updated";
     }
 }
