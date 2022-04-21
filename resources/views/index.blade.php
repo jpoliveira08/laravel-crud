@@ -18,8 +18,8 @@
             <td> {{ $user['name'] }}</td>
             <td> {{ $user['email'] }}</td>
             <td>
-                <button>Edit</button>
-                <button>Remove</button>
+                <a type="button" href="{{ route('userEdit', ['id' => $user->id]) }}">Edit</a>
+                <a type="button" href="{{ route('userDelete', ['id' => $user->id]) }}">Delete</a>
             </td>
         </tr>
         @endforeach

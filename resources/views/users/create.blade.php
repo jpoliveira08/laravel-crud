@@ -7,12 +7,22 @@
     <title>New user</title>
 </head>
 <body>
+    @if ($errors->any())
+      <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
+
     <form action="{{ route('userRegister') }}" method="POST">
         @csrf
         <label for="">Name</label> <br>
         <input type="text" name="name" placeholder="Name"><br>
         <label for="">Contact</label><br>
-        <input type="text" name="contact" placeholder="Contact"><br>
+        <input type="text" name="contact" maxlength="9" placeholder="Contact (9 Digits)"><br>
         <label for="">Email</label><br>
         <input type="email" name="email" placeholder="Email"> <br>
         <button>Save</button>

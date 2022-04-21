@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Requests\FieldRequest;
 
 class UsersController extends Controller
 {
@@ -21,13 +24,10 @@ class UsersController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function store(FieldRequest $request)
     {
-        User::create([
-            'name' => $request->name,
-            'contact' => $request->contact,
-            'email' => $request->email
-        ]);
+        $validateData = $request->validated();
+        User::create($validateData);
 
         return "User successfully registered";
     }
@@ -41,15 +41,11 @@ class UsersController extends Controller
         ]);
     }
 
-    public function update(Request $request, int $id)
+    public function update(FieldRequest $request, int $id)
     {
         $user = User::findOrFail($id);
-
-        $user->update([
-            'name' => $request->name,
-            'contact' => $request->contact,
-            'email' => $request->email
-        ]);
+        $validateData = $request->validated();
+        $user->update($validateData);
 
         return "User successfully updated";
     }

@@ -7,6 +7,15 @@
     <title>Edit</title>
 </head>
 <body>
+    @if ($errors->any())
+      <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
     <form action="{{ route('userUpdate', ['id' => $user->id]) }}" method="POST">
         @csrf
         @method('PUT')
