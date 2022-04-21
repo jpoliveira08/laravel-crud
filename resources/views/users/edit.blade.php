@@ -22,10 +22,11 @@
         <label for="">Name</label> <br>
         <input type="text" name="name" placeholder="Name" value="{{  $user->name }}"><br>
         <label for="">Contact</label><br>
-        <input type="text" name="contact" placeholder="Contact" value="{{  $user->contact }}"><br>
+        <input type="text" name="contact" maxlength="9" placeholder="Contact (9 Digits)"><br>
         <label for="">Email</label><br>
         <input type="email" name="email" placeholder="Email" value="{{  $user->email }}"> <br>
-        <button>Save</button>
+        <button type="submit">Save</button>
+        <a href="{{ route('usersList') }}">Cancel</a>
     </form>
 </body>
 </html>

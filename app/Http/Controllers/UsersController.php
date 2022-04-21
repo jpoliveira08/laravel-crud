@@ -10,10 +10,9 @@ use App\Http\Requests\FieldRequest;
 
 class UsersController extends Controller
 {
-    public function index()
+    public function list()
     {
-
-        return view('index', [
+        return view('users.list', [
             'users' => User::all()
         ]);
     }

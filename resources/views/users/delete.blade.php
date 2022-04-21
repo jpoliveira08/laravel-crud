@@ -11,7 +11,8 @@
         @csrf
         @method('DELETE')
         <label for="">Are you sure you want to delete the data from {{ $user->name }} </label><br>
-        <button>Yes</button>
+        <button type="submit">Yes</button>
+        <a href="{{ route('usersList') }}">No</a>
     </form>
 </body>
 </html>

@@ -4,25 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
+    <title>Home</title>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Actions</td>
-        </tr>
-        @foreach($users as $user)
-        <tr>
-            <td> {{ $user['name'] }}</td>
-            <td> {{ $user['email'] }}</td>
-            <td>
-                <a type="button" href="{{ route('userEdit', ['id' => $user->id]) }}">Edit</a>
-                <a type="button" href="{{ route('userDelete', ['id' => $user->id]) }}">Delete</a>
-            </td>
-        </tr>
-        @endforeach
-    </table>
+    <h1>Contact Management</h1>
+
+    <a href="{{ route('usersList') }}">Proceed</a>
 </body>
 </html>
