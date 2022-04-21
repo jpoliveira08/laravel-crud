@@ -53,4 +53,20 @@ class UsersController extends Controller
 
         return "User successfully updated";
     }
+
+    public function delete(int $id)
+    {
+        $user = User::findOrFail($id);
+        return view('users.delete', [
+            'user' => $user
+        ]);
+    }
+
+    public function destroy(int $id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return "User successfully deleted";
+    }
 }
