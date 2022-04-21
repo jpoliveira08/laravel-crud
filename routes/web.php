@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [UsersController::class, 'index']);
 Route::get('/users/new', [UsersController::class, 'create']);
 Route::post('/users/new', [UsersController::class, 'store'])->name('userRegister');
