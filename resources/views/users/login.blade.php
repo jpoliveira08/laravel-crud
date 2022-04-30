@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>New User</h1>
+    <h1>Login</h1>
     @if ($errors->any())
       <div>
         <ul>
@@ -19,17 +19,15 @@
         </ul>
       </div><br />
     @endif
-    <form action="{{ route('userRegister') }}" method="POST">
+    <form action="{{ route('checkLogin') }}" method="POST">
         @csrf
-        <label for="">Name</label> <br>
-        <input type="text" name="name" placeholder="Name"><br>
-        <label for="">Contact</label><br>
-        <input type="text" name="contact" maxlength="9" placeholder="Contact (9 Digits)"><br>
         <label for="">Email</label><br>
         <input type="email" name="email" placeholder="Email"> <br>
+        <label for="">Contact</label><br>
+        <input type="text" name="contact" maxlength="9" placeholder="Contact (9 Digits)"><br>
         <div class="button-group">
-            <button class="btn-save" type="submit">Save</button>
-            <button type="button" class="btn-cancel" onclick="window.location='{{ route('usersList') }}'">Cancel</button>
+            <button class="btn-save" type="submit">Login</button>
+            <button type="button" class="btn-cancel" onclick="window.location='{{ route('/') }}'">Cancel</button>
         </div>
     </form>
   </div>

@@ -4,36 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <title>Users</title>
 </head>
-<style>
-    .main-text {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-</style>
 <body>
-    <div class="main-text">
+    <div class="container">
         <div class="title">
             <h1>Contact List</h1>
         </div>
-        <a href="{{ route('userCreate') }}">New Contact</a>
+        <button type="button" class="btn" onclick="window.location='{{ route('userCreate') }}'">New Contact</button> 
         <div class="body">
             <table border="1">
                 <tr>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Actions</td>
+                    <th>Name</th>
+                    <th>Email</th>
+                    @if (isset($logged))
+                    <th>Contact</th>
+                    @endif
+                    <th>Actions</th>
                 </tr>
                 @foreach($users as $user)
                 <tr>
                     <td> {{ $user['name'] }}</td>
                     <td> {{ $user['email'] }}</td>
+                    @if (isset($logged))
+                        <th>{{ $user['contact'] }}</th>
+                    @endif
                     <td>
-                        <a type="button" href="{{ route('userEdit', ['id' => $user->id]) }}">Edit</a>
-                        <a type="button" href="{{ route('userDelete', ['id' => $user->id]) }}">Delete</a>
+                        <button type="button" class="btn-edit" onclick="window.location='{{ route('userEdit', ['id' => $user->id]) }}'">Edit</button> 
+                        <button type="button" class="btn-delete" onclick="window.location='{{ route('userDelete', ['id' => $user->id]) }}'">Delete</button> 
                     </td>
                 </tr>
                 @endforeach

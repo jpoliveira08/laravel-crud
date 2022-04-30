@@ -28,7 +28,9 @@ class UsersController extends Controller
         $validateData = $request->validated();
         User::create($validateData);
 
-        return "User successfully registered";
+        return view('users.list', [
+            'users' => User::all()
+        ]);
     }
 
     public function edit(int $id)
@@ -46,7 +48,9 @@ class UsersController extends Controller
         $validateData = $request->validated();
         $user->update($validateData);
 
-        return "User successfully updated";
+        return view('users.list', [
+            'users' => User::all()
+        ]);
     }
 
     public function delete(int $id)
@@ -62,6 +66,8 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return "User successfully deleted";
+        return view('users.list', [
+            'users' => User::all()
+        ]);
     }
 }

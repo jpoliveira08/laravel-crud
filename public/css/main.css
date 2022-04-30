@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.btn {
+    background: #3498db;
+    border-color: #0f3955;
+    color: #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px;
+    min-width: 100px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.btn:hover {
+    background: #2980b9;
+}
+
+.btn-save {
+    background: #8ff754;
+    border-color: #27630be0;
+    color: #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px;
+    min-width: 50px;
+    font-weight: bold;
+}
+
+.btn-edit {
+    background: #faf61f;
+    border-color: #a39302;
+    color: #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px;
+    min-width: 50px;
+    font-weight: bold;
+}
+.btn-delete, .btn-cancel{
+    background: #e7563c;
+    border-color: #791002;
+    color: #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px;
+    min-width: 50px;
+    font-weight: bold;
+}
+
+.button-group {
+    float: right;
+}
+
+table {
+    border: solid 1px #61c0ff;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr th {
+    background-color: #61c0ff;
+    border: solid 1px #61c0ff;
+    color: #000000;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+tr td {
+    border: solid 1px #61c0ff;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+form input {
+    display: block;
+    height: 32px;
+    padding: 6px 16px;
+    width: 100%;
+    border: none;
+    background-color: #f3f3f3;
+}
