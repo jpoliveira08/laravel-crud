@@ -1,0 +1,24 @@
+{
+	"name": "jp-oliveira08/contact-management",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"JpOliveira08\\ContactManagement\\": "src/",
+			"JpOliveira08\\ContactManagement\\Tests\\": "tests/",
+			"JpOliveira08\\ContactManagement\\Database\\Factories\\": "database/factories/",
+			"JpOliveira08\\ContactManagement\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"JpOliveira08\\ContactManagement\\Providers\\ContactManagementServiceProvider"
+			]
+		}
+	}
+}
