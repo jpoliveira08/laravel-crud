@@ -1,0 +1,11 @@
+{
+    "name": "Contact",
+    "alias": "contact",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "JpOliveira08\\Contact\\Providers\\ContactServiceProvider"
+    ],
+    "files": []
+}

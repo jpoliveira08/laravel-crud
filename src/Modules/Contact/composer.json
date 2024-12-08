@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/contact",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "JpOliveira08\\Contact\\": "app/",
+            "JpOliveira08\\Contact\\Database\\Factories\\": "database/factories/",
+            "JpOliveira08\\Contact\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JpOliveira08\\Contact\\Tests\\": "tests/"
+        }
+    }
+}
